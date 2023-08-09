@@ -27,7 +27,7 @@ namespace symmetriskKrypteringØvelse
                 // Opret en memoryStream til dekrypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
-                    // Opret en cryptostream  baseret på DES-algoritmen.
+                    // Opret en cryptostream  baseret på DES-algoritmen og tilstand 'Decrypt'.
                     var cryptoStream = new CryptoStream(memoryStream, des.CreateDecryptor(),
                         CryptoStreamMode.Write);
 
@@ -62,7 +62,7 @@ namespace symmetriskKrypteringØvelse
                 // Opret en memoryStream til dekrypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
-                    // Opret en cryptostream  baseret på DES-algoritmen.
+                    // Opret en cryptostream  baseret på TripleDes-algoritmen og tilstand 'Decrypt'.
                     var cryptoStream = new CryptoStream(memoryStream, tripledes.CreateDecryptor(),
                         CryptoStreamMode.Write);
 
@@ -70,6 +70,7 @@ namespace symmetriskKrypteringØvelse
                     cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
                     cryptoStream.FlushFinalBlock();
 
+                    // Konverter den dekrypterede memoryStream til et byte-array.
                     retur = memoryStream.ToArray();
                 }
             }
@@ -78,25 +79,33 @@ namespace symmetriskKrypteringØvelse
             return (retur);
         }
 
+        // Metode til at udføre dekryptering ved hjælp af AES-algoritmen.
         public byte[] AES(byte[] dataToDecrypt, byte[] key, byte[] iv)
         {
             byte[] retur;
+
+            // Opret en instans af AES-dekrypteringsalgoritmen.
             using (var aes = new AesCryptoServiceProvider())
             {
+                // Konfigurer dekrypteringsindstillingerne.
                 aes.Mode = CipherMode.CBC;
                 aes.Padding = PaddingMode.PKCS7;
 
                 aes.Key = key;
                 aes.IV = iv;
 
+                // Opret en memoryStream til dekrypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
+                    // Opret en cryptostream  baseret på AES-algoritmen og tilstand 'Decrypt'.
                     var cryptoStream = new CryptoStream(memoryStream, aes.CreateDecryptor(),
                         CryptoStreamMode.Write);
 
+                    // Skriv data til cryptostream, dekrypter det og skriv til memoryStream.
                     cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
                     cryptoStream.FlushFinalBlock();
 
+                    // Konverter den dekrypterede memoryStream til et byte-array.
                     retur = memoryStream.ToArray();
                 }
             }
