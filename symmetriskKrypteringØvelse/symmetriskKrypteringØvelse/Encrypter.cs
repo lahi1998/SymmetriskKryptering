@@ -11,31 +11,38 @@ namespace symmetriskKrypteringØvelse
     internal class Encrypter
     {
 
+        // Metode til at udføre kryptering ved hjælp af DES-algoritmen.
         public byte[] Des(byte[] dataToEncrypt, byte[] key, byte[] iv)
         {
             byte[] retur;
+
+            // Opret en instans af DES-krypteringsalgoritmen.
             using (var des = DES.Create())
             {
+                // Konfigurer krypteringsindstillingerne.
                 des.Mode = CipherMode.CBC;
                 des.Padding = PaddingMode.PKCS7;
-
                 des.Key = key;
                 des.IV = iv;
 
+                // Opret en hukommelsesstrøm til krypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
+                    // Opret en kryptostream baseret på DES-algoritmen.
                     var cryptoStream = new CryptoStream(memoryStream, des.CreateEncryptor(),
                         CryptoStreamMode.Write);
 
+                    // Skriv data til kryptostreamen, krypter det og skriv til hukommelsesstrømmen.
                     cryptoStream.Write(dataToEncrypt, 0, dataToEncrypt.Length);
                     cryptoStream.FlushFinalBlock();
 
+                    // Konverter den krypterede hukommelsesstrøm til et byte-array.
                     retur = memoryStream.ToArray();
                 }
             }
 
-
-            return (retur);
+            // Returner det krypterede byte-array.
+            return retur;
         }
 
         public byte[] TripleDes(byte[] dataToEncrypt, byte[] key, byte[] iv)
