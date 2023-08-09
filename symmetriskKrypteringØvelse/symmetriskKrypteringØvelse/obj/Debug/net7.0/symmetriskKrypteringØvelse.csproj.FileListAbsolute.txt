@@ -1,0 +1,15 @@
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\bin\Debug\net7.0\symmetriskKrypteringØvelse.exe
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\bin\Debug\net7.0\symmetriskKrypteringØvelse.deps.json
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\bin\Debug\net7.0\symmetriskKrypteringØvelse.runtimeconfig.json
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\bin\Debug\net7.0\symmetriskKrypteringØvelse.dll
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\bin\Debug\net7.0\symmetriskKrypteringØvelse.pdb
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.csproj.AssemblyReference.cache
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.AssemblyInfoInputs.cache
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.AssemblyInfo.cs
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.csproj.CoreCompileInputs.cache
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.dll
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\refint\symmetriskKrypteringØvelse.dll
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.pdb
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\symmetriskKrypteringØvelse.genruntimeconfig.cache
+C:\Users\zbclshi\source\repos\symmetriskKrypteringØvelse\symmetriskKrypteringØvelse\obj\Debug\net7.0\ref\symmetriskKrypteringØvelse.dll
