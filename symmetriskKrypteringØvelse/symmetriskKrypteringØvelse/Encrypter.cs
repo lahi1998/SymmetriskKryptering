@@ -28,7 +28,7 @@ namespace symmetriskKrypteringØvelse
                 // Opret en memoryStream til krypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
-                    // Opret en Cryptostream baseret på DES-algoritmen.
+                    // Opret en Cryptostream baseret på DES-algoritmen og tilstand 'Encrypt'.
                     var cryptoStream = new CryptoStream(memoryStream, des.CreateEncryptor(),
                         CryptoStreamMode.Write);
 
@@ -63,7 +63,7 @@ namespace symmetriskKrypteringØvelse
                 // Opret en memoryStream til krypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
-                    // Opret en cryptoStream baseret på TripleDES-algoritmen.
+                    // Opret en cryptoStream baseret på TripleDES-algoritmen og tilstand 'Encrypt'.
                     var cryptoStream = new CryptoStream(memoryStream, tripledes.CreateEncryptor(),
                         CryptoStreamMode.Write);
 
@@ -97,7 +97,7 @@ namespace symmetriskKrypteringØvelse
                 // Opret en memoryStream til krypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
-                    // Opret en cryptoStream baseret på AES-algoritmen.
+                    // Opret en cryptoStream baseret på AES-algoritmen og tilstand 'Encrypt'.
                     var cryptoStream = new CryptoStream(memoryStream, aes.CreateEncryptor(),
                         CryptoStreamMode.Write);
 
