@@ -10,49 +10,63 @@ namespace symmetriskKrypteringØvelse
 {
     internal class Decrypter
     {
+        // Metode til at udføre dekryptering ved hjælp af DES-algoritmen.
         public byte[] Des(byte[] dataToDecrypt, byte[] key, byte[] iv)
         {
             byte[] retur;
+
+            // Opret en instans af DES-dekrypteringsalgoritmen.
             using (var des = new DESCryptoServiceProvider())
             {
+                // Konfigurer dekrypteringsindstillingerne.
                 des.Mode = CipherMode.CBC;
                 des.Padding = PaddingMode.PKCS7;
-
                 des.Key = key;
                 des.IV = iv;
 
+                // Opret en memoryStream til dekrypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
+                    // Opret en cryptostream  baseret på DES-algoritmen.
                     var cryptoStream = new CryptoStream(memoryStream, des.CreateDecryptor(),
                         CryptoStreamMode.Write);
 
+                    // Skriv data til cryptostream, dekrypter det og skriv til memoryStream.
                     cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
                     cryptoStream.FlushFinalBlock();
 
+                    // Konverter den dekrypterede memoryStream til et byte-array.
                     retur = memoryStream.ToArray();
                 }
             }
 
-
-            return (retur);
+            // Returner det dekrypterede byte-array.
+            return retur;
         }
 
+        // Metode til at udføre dekryptering ved hjælp af TripleDes-algoritmen.
         public byte[] TripleDes(byte[] dataToDecrypt, byte[] key, byte[] iv)
         {
             byte[] retur;
+
+            // Opret en instans af TripleDes-dekrypteringsalgoritmen.
             using (var tripledes = new TripleDESCryptoServiceProvider())
             {
+                // Konfigurer dekrypteringsindstillingerne.
                 tripledes.Mode = CipherMode.CBC;
                 tripledes.Padding = PaddingMode.PKCS7;
 
                 tripledes.Key = key;
                 tripledes.IV = iv;
 
+                // Opret en memoryStream til dekrypteret data.
                 using (var memoryStream = new MemoryStream())
                 {
+                    // Opret en cryptostream  baseret på DES-algoritmen.
                     var cryptoStream = new CryptoStream(memoryStream, tripledes.CreateDecryptor(),
                         CryptoStreamMode.Write);
 
+                    // Skriv data til cryptostream, dekrypter det og skriv til memoryStream.
                     cryptoStream.Write(dataToDecrypt, 0, dataToDecrypt.Length);
                     cryptoStream.FlushFinalBlock();
 
